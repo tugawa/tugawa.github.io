@@ -6,7 +6,7 @@
 
 <body>
 <h1>鵜川 始陽 (うがわ ともはる/Ugawa, Tomoharu)</h1>
-[<a href="index-e.html">English page</a>]<br/>
+[<a href="http://spa.info.kochi-tech.ac.jp/~ugawa/index-e.html">English page in Kochi University of Technology</a>]<br/>
 
 <p>
 <a href="https://www.u-tokyo.ac.jp">東京大学</a><br/>
@@ -17,24 +17,18 @@
 </p>
 
 <p>
-2020年9月まで<br>
+2020年10月に
 <a href="http://www.kochi-tech.ac.jp/">高知工科大学</a>
 <a href="http://www.info.kochi-tech.ac.jp/">情報学群</a>
-に所属していました．
+から移動しました．
 </p>
 
 <p>
   〒113-8656 東京都文京区本郷7-3-1<br/>
   東京大学情報理工学系研究科創造情報学専攻<br/>
-  うがわ＠ci.i.Ｕ−ＴＯＫＹＯドメイン
-<!--〒782-8502 高知県香美市土佐山田町宮ノ口185<br/>
-教育研究棟A 417号室<br/>
-E-mail: last.first @ kochi-tech.ac.jp<br/>
-TEL: 0887-53-1020 (代表)<br/>
-FAX: 0887-57-2220 (代表)<br/>-->
-<!--内線番号: 5329<br/>
-Fax: 042-443-5334 (講座共通)<br/>
-<img src="email.jpg" alt="[my last name] + @ + cs.uec.ac.jp"><br/> -->
+  E-mail: うがわ＠ci.i.Ｕ−ＴＯＫＹＯドメイン<br/>
+  TEL: 03-5841-4383<br/>
+  researchmap: <a href="https://researchmap.jp/ugawa">https://researchmap.jp/ugawa</a>
 </p>
 
 <!--
@@ -80,14 +74,62 @@ JavaやJavaScriptなどのマネージド言語の実行系に
 </p>
 
 <h3>最近の研究テーマ</h3>
-<ul>
-  <li>完全に並行なガベージコレクション</li>
-  <li>組込みシステム向けJavaScript処理系</li>
-  <li>メモリモデルの下でのアルゴリズムの検証</li>
-  <li>消費電力削減への仮想機械からのアプローチ</li>
+
+<h4>不揮発性メモリを使ったJavaの永続化ヒープ</h4>
+
+<table><tr><td valign="top"><img src="nvm.JPG"></td><td valign="top">
+突然電源が切れてもメモリ上のデータが失なわれない Java 仮想機械を目指しています．
+メインメモリに不揮発性メモリ（NVM）を使ったシステムでは，
+電源が失われても NVMに書き込んだデータを保持することができます．
+しかし，データ構造を更新する一連の書込みの途中で電源が切れる可能性があり，
+NVM 上のデータを常に整合性がとれた状態にしておくのは至難の業です．
+キャッシュメモリから書き戻されたデータだけが NVM に書き込まれることや，
+マルチスレッドアプリケーションでは複数のスレッドが並行して NVM
+上のデータにアクセスする可能性があることを考慮すると，なおさらです．
+この研究では，マネージド言語である Java を対象に，オブジェクトを NVM
+上に配置して，突然電源が切れても再起動後に復元できる仕組みを開発しています．
+いつ電源が切れても復元できるよう，NVM
+上のデータがどの瞬間も不整合な状態にならないことを保証しつつ，
+性能を稼ぐのが難しいところです．
+</td></tr></table>
+
+<h4>組込みシステム向けJavaScript処理系</h4>
+
+<table><tr><td valign="top">
+IoT 向けのマイコンなどの組込みシステム（100 KB〜のメモリを想定）で動作する JavaScript
+インタプリタ eJS を開発しています．このインタプリタを使えば，JavaScriptのプログラム
+をそのままマイコンで実行できます．
+組込みシステムは一般にメモリが少なく実行速度も遅いですが，
+個々のシステムで実行されるプログラムは固定されている傾向があります．
+ブラウザの JavaScript エンジンは，
+どのようなプログラムでも実行できるようにするために仕組みが複雑になりがちです．
+eJS は対象のシステム毎に，
+そのシステムやそこで実行するプログラムに特化したインタプリタを自動生成します．
+このとき，不要な機能を削ぎ落し，使う機能だけが高速に動作するインタプリタを生成します．
+</td><td valign="top"><img src="ejs.JPG"></td></tr></table>
+
+<h4>大規模システム向け並行ガーベージコレクション</h4>
+
+ビッグデータを扱う計算機システムは，大量のメモリを搭載し，
+ときにはテラバイトのデータを扱うこともあります．CPU コアも何十個もあり，
+多数のスレッドが並行して動作します．そのようなシステムのアプリケーションを Java
+のようなマネージド言語で記述すると，ガーベージコレクションが問題になります．
+何テラバイトものメモリ空間のガーベージコレクションを，
+アプリケーションの実行を一時停止して一度に行おうとすると，実行が長時間止まってしまいます．
+さらに，多数のスレッドが並行して実行していると，全スレッドを止めるだけでも大変です．
+この研究で開発した Transactional Sapphire は，スレッドを一斉に止める必要がありません．
+アプリケーションを一切止めることなく，並行してガーベージコレクションを行います．
+Transactional Sapphire は，コンパクションもアプリケーションを止めずに行います．
+しかも，オーバヘッドが大きいリードバリアは使いません．
+この研究で開発した軽量な書込みバリアのアルゴリズムを使って，
+アプリケーションとガーベージコレクションが調停しながらデータを移動してコンパクションします．
+
+<!--<h4>メモリモデルに沿ったガーベージコレクションの検証</h4>-->
+
+
 </ul>
 
-<h3>最近の発表文献と主要な発表文献</h3>
+<h3>研究発表 (一部日本語preprint有ります!)</h3>
 (<a href="http://dblp.uni-trier.de/pers/hd/u/Ugawa:Tomoharu">DBLP</a>)
 
 <ul>
@@ -243,13 +285,6 @@ JavaやJavaScriptなどのマネージド言語の実行系に
   <li>情報処理学会 プログラミングシンポジウム 山下奨励賞 (2020年)
 </ul>
 
-<h3>その他</h3>
-<ul>
-  <li><a href="https://researchmap.jp/read0096403/">researchmap</a>
-</ul>
-
-<hr/>
-
 <h2>学会活動</h2>
 
 <h3>プログラム委員長</h3>
@@ -268,8 +303,9 @@ JavaやJavaScriptなどのマネージド言語の実行系に
     <a href="https://2020.programming-conference.org/home/MoreVMs-2020">MoreVMs 2020</a>
   <li>
     <a href="http://www-kb.is.s.u-tokyo.ac.jp/ppl2015/">PPL 2015</a>,
-    <a href="https://jssst-ppl.org/workshop/2018/">PPL 2018</a>
-    <a href="https://jssst-ppl.org/workshop/2019/">PPL 2019</a>
+    <a href="https://jssst-ppl.org/workshop/2018/">PPL 2018</a>,
+    <a href="https://jssst-ppl.org/workshop/2019/">PPL 2019</a>,
+    PPL 2021
   </li>
   <li>
     <a href="http://sacsis.hpcc.jp/2013/">SACSIS 2013</a>
@@ -288,6 +324,7 @@ JavaやJavaScriptなどのマネージド言語の実行系に
   <li>情報処理学会プログラミング研究会編集委員(2017〜)</li>
   <li>日本ソフトウェア科学会編集委員(2017〜)</li>
 </ul>
+<!--
 
 <hr/>
 
@@ -308,13 +345,13 @@ JavaやJavaScriptなどのマネージド言語の実行系に
   <li>情報学群実験第2</li>
   <li>計算理論</li>
 </ul>
+-->
 
 <hr/>
 
 <h2>リンク</h2>
 <ul>
-  <li><a href="http://pl.info.kochi-tech.ac.jp/">研究室</a></li>
-  <li>前所属 電気通信大学<a href="http://ipl.cs.uec.ac.jp">岩崎研究室</a></li>
+  <li>高知工科大（前職）の<a href="http://pl.info.kochi-tech.ac.jp/">研究室</a></li>
 </ul>
 </body>
 </html>
