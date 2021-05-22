@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>Tomoharu Ugawa</title>
+</head>
+
+<body>
+<h1>Tomoharu Ugawa (<img src="name.png" alt="UGAWA, Tomoharu">)</h1>
+[<a href="index.html">Japanese page</a>]<br/>
+
+<p>
+Associate Professor<br/>
+<a href="https://www.i.u-tokyo.ac.jp/index_e.shtml">Graduate School of Information Science and Technology</a><br/>
+The University of Tokyo
+<p>
+<p>
+Previously, I was an associate professor of<br/>
+<a href="http://www.kochi-tech.ac.jp/">Kochi University of Technology</a><br/>
+</p>
+
+
+<!--<p>
+185 Miyanokuchi, Tosayamada-Cho, Kami-Shi,<br/>
+Kochi 782-8502, Japan.<br/>
+ugawa.tomoharu + @ + kochi-tech.ac.jp<br/>
+</p>-->
+
+<hr/>
+
+<h2>Curriculum Vitae</h2>
+
+Bachelor of Engineering, Kyoto University, 2000.<br/>
+Master of Informatics, Kyoto University, 2002.<br/>
+Ph.D., Kyoto University, 2005.<br/>
+Research Assistant, Graduate School of Informatics,
+Kyoto University, 2005-2008.<br/>
+Assistant Professor, The University of Electro-Communications, 2008-2014.<br/>
+Associate Professor, Kochi University of Technology, 2014-2020.<br/>
+Associate Professor, The University of Tokyo, 2020-.<br/>
+
+
+<h2>Research</h2>
+I am interested in programming languages and managed runtime systems,
+especially, garbage collection and utilizing hardware.  My research
+goal is to develop techniques to develop secure managed runtimes and
+improve their performance.
+
+<h3>Topics</h3>
+
+<h4>Persistent Java Heap Using Non-Volatile Memory</h4>
+<table><tr><td valign="top"><img src="nvm.JPG"></td><td valign="top">
+      My group is developing a Java virtual machine that can recover
+      data even after a sudden power loss.  For example, with this system,
+      data can be held in memory thus improving access speed compared
+      with traditional database systems.
+      We exploit new Non-Volatile Memory (NVM) technologies, which can
+      preserve memory contents without power. We are developing mechanisms
+      for Java, where programmers do not handle memory directly,
+      to automatically manage objects in NVM.
+</td></tr></table>
+
+<h4>JavaScript VM for Embedded Systems</h4>
+<table><tr><td valign="top">
+      JavaScript is a widely-used programming language in browsers. This research aims at making JavaScript available on embedded systems and IoT devices, with limited computational resources (CPU power and memory). JavaScript programs are executed on virtual machines called JavaScript engines. Our approach is to specialize the virtual machine to the JavaScript program being run.
+      </td><td valign="top"><img src="ejs.JPG"></td></tr></table>
+
+
+<h2>Publications</h2>
+(<a href="http://dblp.uni-trier.de/pers/hd/u/Ugawa:Tomoharu">DBLP</a>)
+<ul>
+  <li>
+    Ugawa, T., Fujimoto, T.<br/>
+    Finding Errors in Registrations of Local Variables Using Coccinelle
+    for Accurate Garbage Collection<br/>
+    Journal of Information Processing, Vol. 28, pp. 169--177, 2020.<br/>
+    DOI: <a href="https://doi.org/10.2197/ipsjjip.28.169">https://doi.org/10.2197/ipsjjip.28.169</a>
+    [<a href="publication/pro125-slide-jp.pdf">Slides (in Japanese)</a>]
+  </li>
+  <li>
+    Nonaka, T., Ugawa, T.<br/>
+    Design and Implementation of Superinstructions for
+    JavaScript Virtual Machine Generation System
+    for Embedded Systems eJSTK</br>
+    Journal of Information Processing, Vol. 27, pp. 658--670, 2019.</br>
+    DOI:<a href="https://doi.org/10.2197/ipsjjip.27.658">https://doi.org/10.2197/ipsjjip.27.658</a>
+  </li>
+  <li>
+    Ugawa, T., Iwasaki, H., Kataoka, T.<br/>
+    Collecting Type Information Using Unit Tests for Customization of
+    JavaScript Virtual Machines<br/>
+    14th Workshop on Implementation, Compilation, Optimization of
+    Object-Oriented Languages, Programs and Systems (ICOOOLPS 2019),
+    July 19, 2019</br>
+    [<a href="publication/icooolps2019-slide.pdf">slide</a>]
+  </li>
+  <li>
+    Matsumoto, K.,  Ugawa, T.</br>
+    Visualization of Counterexamples of Memory Model-Aware Model Checking Using SPIN</br>
+    Journal of Information Processing, Vol. 27, pp. 489--498, 2019.</br>
+    DOI: <a href="https://doi.org/10.2197/ipsjjip.27.489">https://doi.org/10.2197/ipsjjip.27.489</a><br/>    
+  </li>
+  <li>
+    Ugawa, T., Iwasaki, H., Kataoka, T.<br/>
+    eJSTK: Building JavaScript Virtual Machines With Customized Datatypes
+    for Embedded Systems<br/>
+    Journal of Computer Languages.</br>
+    Vol. 51, pp. 261--279, Elsevier, April 2019.<br/>
+    DOI: https://doi.org/10.1016/j.cola.2019.01.003<br/>
+    [<a href="ejs-comlan-preprint.pdf">preprint</a>]
+    [<a href="https://authors.elsevier.com/a/1Z7wg,No1Tt2lG">PDF (free download until July 16, 2019) </a>]
+    [<a href="https://github.com/plasklab/ejstk">software</a>]
+  </li>
+  <li>
+    Ugawa, T., Ritson, C. G., Jones, R. E.<br/>
+    Transactional Sapphire: Lessons in High Performance,
+    On-the-fly Garbage Collection<br/>
+    Transactions on Programming Languages and Systems (TOPLAS)<br/>
+    Vol. 40 Issue 4, Article No. 15, December 2018.<br/>
+    doi:<a href="https://dl.acm.org/citation.cfm?doid=3292525.3226225">10.1145/3226225</a>
+    [<a href="https://kar.kent.ac.uk/67207/">preprint</a>]
+    [<a href="https://github.com/rejones/sapphire">software</a>]
+  </li>
+  <li>
+    Ugawa, T., Iwasaki, H.</br>
+    Generating a Minimal JavaScript VM Specialized for Target Applications<br/>
+    2018 Virtual Machines and Language Implementations (VMIL 2018),
+    November 6, 2018</br>
+    [<a href="vmil2018-slide.pdf">slide</a>]
+    [<a href="https://github.com/plasklab/ejstk">software</a>]
+  </li>
+  <li>
+    Kataoka, T., Ugawa, T., Iwasaki, H.<br/>
+    A Framework for Constructing JavaScript Virtual
+    Machines with Customized Datatype Representations<br/>
+    The 33rd ACM/SIGAPP Symposium On Applied Computing
+    (<a href="https://www.sigapp.org/sac/sac2018/">SAC 2018</a>),
+    pp. 1238--1247, ACM, April 9-13, 2018<br/>
+    doi:<a href="https://doi.org/10.1145/3167132.3167266">10.1145/3167132.3167266</a>
+    [<a href="https://github.com/plasklab/ejstk">software</a>]
+  </li>
+  <li>
+    Matsumoto, K., Ugawa, T., Abe,. T<br/>
+    Improvement of a Library for Model Checking under Weakly Ordered Memory Model with SPIN<br/>
+    Journal of Information Processing, Vol. 26, pp. 314--326, 2018.</br>
+    doi:<a href="https://doi.org/10.2197/ipsjjip.26.314">https://doi.org/10.2197/ipsjjip.26.314</a>
+    [<a href="https://github.com/plasklab/mmlib">software</a>]
+  </li>
+  <li>
+    Ugawa, T., Abe, T., Maeda, T.<br/>
+    Model Checking Copy Phases of Concurrent Copying
+    Garbage Collection with Various Memory Models<br/>
+    Proc. OOPSLA 2017, ACM,
+    pp. 53:1 -- 53:26, October 2017.<br/>
+    doi:<a href="http://dx.doi.org/10.1145/3133877">10.1145/3133877</a>
+    [<a href="oopsla17-slide.pdf">slide</a>]
+    [<a href="https://dl.acm.org/citation.cfm?id=3152284.3133877">software (see Source Materials)</a>]
+  </li>
+  <li>
+    Abe, T., Ugawa, T., Maeda, T.</br>
+    Reordering control approaches to state explosion in model checking with memory consistency models<br/>
+    Proc. of 9th Working Conference on Verified Software: Theories, Tools, and Experiments (VSTTE'17), LNCS 10712, Springer,
+    pp. 170--190, July 2017.
+    doi:<a href="https://doi.org/10.1007/978-3-319-72308-2_11">10.1007/978-3-319-72308-2_11</a>
+  </li>
+  <li>
+    Abe, T., Ugawa, T., Maeda, T., Matsumoto, K.<br/>
+    Reducing state explosion for software model checking with relaxed memory consistency models<br/>
+    Proc. of Symposium on Dependable Software Engineering Theories, Tools and Applications (SETTA'16), LNCS 9984, Springer,
+    pp. 118--135,  November 2016. </br>
+  </li>
+  <li>
+    Ugawa, T., Jones, R. E., Ritson, C. G.<br/>
+    Reference Object Processing in On-The-Fly Garbage Collection<br/>
+    Proc. International Symposium on Memory Management (ISMM 2014),
+    ACM, pp. 59--69, June 2014.<br/>
+    doi:<a href="http://dx.doi.org/10.1145/2602988.2602991">10.1145/2602988.2602991</a>
+    [<a href="https://kar.kent.ac.uk/40820">paper</a>]
+    [<a href="ismm-2014-reftypes.pdf">slide</a>]
+  </li>
+  <li>
+    Ritson, C. G., Ugawa, T., Jones, R. E.<br/>
+    Exploring Garbage Collection with Haswell Hardware Transactional Memory<br/>
+    Proc. International Symposium on Memory Management (ISMM 2014),
+    ACM, pp. 105--115, June 2014.<br/>
+    doi:<a href="http://dx.doi.org/10.1145/2602988.2602992">10.1145/2602988.2602992</a>
+    [<a href="https://kar.kent.ac.uk/40819">paper</a>]
+    [<a href="https://www.cs.kent.ac.uk/projects/gc/mirrorgc/ritson-21-haswell-gc.pdf">slide</a>]
+  </li>
+  <li>
+    Morikawa, K., Ugawa, T., Iwasaki, H.<br/>
+    Adaptive scanning reduces sweep time for the Lisp2 mark-compact garbage collector<br/>
+    Proc. of International Symposium on Memory Management (ISMM 2013),
+    ACM, pp. 15--26, June 2013.<br/>
+    doi:10.1145/2555670.2466480
+  </li>
+  <li>
+    (<a href="http://dblp.uni-trier.de/pers/hd/u/Ugawa:Tomoharu">and more</a>)
+  </li>
+</ul>
+
+<h2>Service</h2>
+
+<h3>PC member</h3>
+<ul>
+  <li>ISORC 2009</li>
+  <li>ISMM 2014, 2018</li>
+  <li>MoreVMs 2020, 2021</li>
+</ul>
+
+</body>
+</html>
